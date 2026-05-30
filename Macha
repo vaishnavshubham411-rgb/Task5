@@ -1,0 +1,1637 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Two Leaves and a Bud | Organic Tea</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --navy: #2a2857;
+    --cream: #f5f0e8;
+    --warm-white: #faf8f4;
+    --green: #4a7c59;
+    --green-light: #7aaa8a;
+    --gold: #c8a96e;
+    --dark: #1a1a2e;
+    --text: #2c2c2c;
+    --text-muted: #6b6b6b;
+    --border: #e8e2d9;
+    --font-serif: 'Playfair Display', serif;
+    --font-body: 'DM Sans', sans-serif;
+    --font-display: 'Cormorant Garamond', serif;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--font-body);
+    color: var(--text);
+    background: var(--warm-white);
+    overflow-x: hidden;
+  }
+
+  a { text-decoration: none; color: inherit; }
+  ul { list-style: none; }
+  img { max-width: 100%; display: block; }
+
+  /* ─── ANNOUNCEMENT BAR ─── */
+  .announcement-bar {
+    background: var(--navy);
+    color: #fff;
+    text-align: center;
+    padding: 10px 20px;
+    font-size: 13px;
+    letter-spacing: 0.04em;
+    font-weight: 400;
+  }
+
+  /* ─── HEADER ─── */
+  header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--warm-white);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .header-inner {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    padding: 0 32px;
+    height: 72px;
+  }
+
+  .nav-left { display: flex; gap: 28px; align-items: center; }
+  .nav-left a {
+    font-size: 13.5px;
+    font-weight: 500;
+    letter-spacing: 0.03em;
+    color: var(--text);
+    transition: color 0.2s;
+    position: relative;
+  }
+  .nav-left a:hover { color: var(--navy); }
+
+  .logo {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .logo svg { height: 38px; width: auto; }
+  .logo-text {
+    font-family: var(--font-serif);
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--navy);
+    line-height: 1.2;
+    letter-spacing: 0.01em;
+  }
+
+  .nav-right {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: flex-end;
+  }
+  .nav-right a {
+    font-size: 13.5px;
+    font-weight: 500;
+    letter-spacing: 0.03em;
+    color: var(--text);
+    transition: color 0.2s;
+  }
+  .nav-right a:hover { color: var(--navy); }
+
+  .cart-btn {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--navy);
+    color: #fff !important;
+    padding: 8px 16px;
+    border-radius: 100px;
+    font-size: 13px !important;
+    font-weight: 500 !important;
+  }
+
+  /* Mega Menu */
+  .nav-item { position: relative; }
+  .nav-item > a { cursor: pointer; }
+  .mega-menu {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--warm-white);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 28px 32px;
+    width: 560px;
+    display: none;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+    margin-top: 8px;
+  }
+  .nav-item:hover .mega-menu { display: grid; }
+  .mega-col h4 {
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 12px;
+    font-weight: 600;
+  }
+  .mega-col a {
+    display: block;
+    font-size: 14px;
+    font-weight: 400;
+    padding: 5px 0;
+    color: var(--text);
+    transition: color 0.2s;
+  }
+  .mega-col a:hover { color: var(--navy); }
+
+  /* ─── HERO ─── */
+  .hero {
+    position: relative;
+    min-height: 92vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background: linear-gradient(135deg, #2a4a3a 0%, #1e3a2e 40%, #2a2857 100%);
+  }
+
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 20% 50%, rgba(74,124,89,0.3) 0%, transparent 60%),
+      radial-gradient(ellipse at 80% 30%, rgba(42,40,87,0.5) 0%, transparent 60%),
+      radial-gradient(ellipse at 50% 90%, rgba(200,169,110,0.15) 0%, transparent 50%);
+  }
+
+  /* Decorative leaf shapes */
+  .hero-leaves {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+  }
+  .hero-leaf {
+    position: absolute;
+    opacity: 0.12;
+  }
+  .hero-leaf svg { fill: #7aaa8a; }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding: 40px 20px;
+    max-width: 900px;
+  }
+
+  .hero-eyebrow {
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.6);
+    margin-bottom: 28px;
+    font-weight: 500;
+  }
+
+  .hero-title {
+    font-family: var(--font-serif);
+    font-size: clamp(52px, 8vw, 96px);
+    font-weight: 400;
+    color: #fff;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    margin-bottom: 28px;
+  }
+
+  .hero-title em {
+    font-style: italic;
+    color: var(--gold);
+  }
+
+  .hero-sub {
+    font-size: 17px;
+    color: rgba(255,255,255,0.75);
+    line-height: 1.65;
+    max-width: 540px;
+    margin: 0 auto 40px;
+    font-weight: 300;
+  }
+
+  .hero-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: #fff;
+    color: var(--navy);
+    padding: 16px 36px;
+    border-radius: 100px;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .hero-cta:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 40px rgba(0,0,0,0.2);
+  }
+
+  .hero-scroll {
+    position: absolute;
+    bottom: 36px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    color: rgba(255,255,255,0.5);
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    animation: bounce 2s ease-in-out infinite;
+  }
+  .hero-scroll span { writing-mode: vertical-rl; }
+  .scroll-line {
+    width: 1px;
+    height: 40px;
+    background: rgba(255,255,255,0.3);
+  }
+  @keyframes bounce {
+    0%, 100% { transform: translateX(-50%) translateY(0); }
+    50% { transform: translateX(-50%) translateY(8px); }
+  }
+
+  /* ─── TAGLINE BAND ─── */
+  .tagline-section {
+    padding: 80px 32px;
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .tagline-section h2 {
+    font-family: var(--font-serif);
+    font-size: clamp(30px, 4vw, 50px);
+    font-weight: 400;
+    line-height: 1.3;
+    color: var(--navy);
+  }
+
+  .tagline-section h2 em {
+    font-style: italic;
+    color: var(--green);
+  }
+
+  /* ─── PRODUCTS ─── */
+  .section {
+    padding: 64px 32px;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  .section-header {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-bottom: 36px;
+  }
+
+  .section-label {
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+
+  .section-title {
+    font-family: var(--font-serif);
+    font-size: clamp(26px, 3vw, 38px);
+    font-weight: 400;
+    color: var(--navy);
+    line-height: 1.2;
+  }
+
+  .section-title em { font-style: italic; color: var(--green); }
+
+  .view-all {
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--navy);
+    border-bottom: 1px solid var(--navy);
+    padding-bottom: 2px;
+    white-space: nowrap;
+    transition: color 0.2s;
+  }
+  .view-all:hover { color: var(--green); border-color: var(--green); }
+
+  /* Product Grid */
+  .product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 28px;
+  }
+
+  .product-card {
+    background: #fff;
+    border-radius: 20px;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+    border: 1px solid var(--border);
+  }
+  .product-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+  }
+
+  .product-img {
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+    background: var(--cream);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-serif);
+    font-size: 13px;
+    color: var(--text-muted);
+    font-style: italic;
+  }
+
+  .product-img-placeholder {
+    width: 100%;
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 48px;
+  }
+
+  .product-info { padding: 18px 20px 22px; }
+
+  .product-category {
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 6px;
+    font-weight: 600;
+  }
+
+  .product-name {
+    font-family: var(--font-serif);
+    font-size: 17px;
+    font-weight: 500;
+    color: var(--navy);
+    margin-bottom: 6px;
+    line-height: 1.3;
+  }
+
+  .product-desc {
+    font-size: 12.5px;
+    color: var(--text-muted);
+    line-height: 1.5;
+    margin-bottom: 12px;
+  }
+
+  .product-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .product-price {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--text);
+  }
+
+  .product-stars {
+    font-size: 11px;
+    color: var(--gold);
+    display: flex;
+    gap: 1px;
+    align-items: center;
+  }
+  .product-rating-count { color: var(--text-muted); font-size: 11px; margin-left: 4px; }
+
+  .add-btn {
+    background: var(--navy);
+    color: #fff;
+    border: none;
+    border-radius: 100px;
+    padding: 8px 16px;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    letter-spacing: 0.04em;
+    transition: background 0.2s, transform 0.15s;
+  }
+  .add-btn:hover { background: var(--green); transform: scale(1.04); }
+
+  /* ─── DISCOVER / FILTER ─── */
+  .discover-section {
+    background: var(--navy);
+    padding: 72px 32px;
+    text-align: center;
+    color: #fff;
+  }
+
+  .discover-inner { max-width: 900px; margin: 0 auto; }
+
+  .discover-section .section-label { color: rgba(255,255,255,0.5); }
+
+  .discover-section .section-title {
+    color: #fff;
+    margin-bottom: 40px;
+  }
+  .discover-section .section-title em { color: var(--gold); }
+
+  .filter-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+  }
+
+  .filter-chip {
+    background: rgba(255,255,255,0.1);
+    color: rgba(255,255,255,0.85);
+    border: 1px solid rgba(255,255,255,0.2);
+    padding: 9px 20px;
+    border-radius: 100px;
+    font-size: 13px;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-weight: 400;
+  }
+  .filter-chip:hover, .filter-chip.active {
+    background: #fff;
+    color: var(--navy);
+    border-color: #fff;
+  }
+
+  /* ─── ORIGIN SECTION ─── */
+  .origin-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 560px;
+    overflow: hidden;
+  }
+
+  .origin-content {
+    background: var(--cream);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 80px 64px;
+  }
+
+  .origin-content .section-label { color: var(--text-muted); margin-bottom: 12px; }
+
+  .origin-content h2 {
+    font-family: var(--font-serif);
+    font-size: clamp(36px, 4vw, 56px);
+    font-weight: 400;
+    color: var(--navy);
+    line-height: 1.1;
+    margin-bottom: 24px;
+    text-transform: lowercase;
+  }
+
+  .origin-content p {
+    font-size: 16px;
+    line-height: 1.75;
+    color: var(--text-muted);
+    margin-bottom: 36px;
+    max-width: 440px;
+  }
+
+  .origin-pillars {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 40px;
+  }
+
+  .pillar {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--navy);
+  }
+
+  .pillar-icon {
+    width: 40px;
+    height: 40px;
+    background: var(--navy);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    flex-shrink: 0;
+  }
+
+  .origin-image {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .origin-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .origin-image-placeholder {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #2a4a3a, #1e3a2e, #4a7c59);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 120px;
+    min-height: 560px;
+  }
+
+  /* ─── REVIEWS ─── */
+  .reviews-section {
+    padding: 80px 32px;
+    background: var(--warm-white);
+  }
+
+  .reviews-inner { max-width: 1200px; margin: 0 auto; }
+
+  .reviews-section .section-label { text-align: center; }
+  .reviews-section .section-title {
+    text-align: center;
+    margin-bottom: 52px;
+  }
+
+  .reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+  }
+
+  .review-card {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 28px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .review-stars { color: var(--gold); font-size: 14px; }
+
+  .review-text {
+    font-size: 14px;
+    line-height: 1.65;
+    color: var(--text);
+    flex: 1;
+    font-style: italic;
+    font-family: var(--font-display);
+    font-size: 16px;
+  }
+
+  .review-product {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding-top: 14px;
+    border-top: 1px solid var(--border);
+  }
+
+  .review-product-img {
+    width: 40px;
+    height: 40px;
+    background: var(--cream);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+  }
+
+  .review-product-info { flex: 1; }
+  .review-product-name {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--navy);
+    line-height: 1.3;
+  }
+  .review-author {
+    font-size: 11px;
+    color: var(--text-muted);
+    margin-top: 2px;
+  }
+
+  /* ─── WHOLESALE BANNER ─── */
+  .wholesale-section {
+    background: var(--green);
+    padding: 80px 32px;
+    text-align: center;
+    color: #fff;
+  }
+
+  .wholesale-inner { max-width: 700px; margin: 0 auto; }
+
+  .wholesale-section h2 {
+    font-family: var(--font-serif);
+    font-size: clamp(32px, 4vw, 52px);
+    font-weight: 400;
+    margin-bottom: 20px;
+    line-height: 1.2;
+  }
+  .wholesale-section h2 em { font-style: italic; color: rgba(255,255,255,0.75); }
+
+  .wholesale-section p {
+    font-size: 16px;
+    color: rgba(255,255,255,0.8);
+    line-height: 1.65;
+    margin-bottom: 36px;
+  }
+
+  .btn-outline-white {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    border: 2px solid #fff;
+    color: #fff;
+    padding: 14px 36px;
+    border-radius: 100px;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    transition: all 0.2s;
+  }
+  .btn-outline-white:hover {
+    background: #fff;
+    color: var(--green);
+  }
+
+  /* ─── LATTES ─── */
+  .lattes-section {
+    padding: 80px 32px;
+    background: var(--cream);
+  }
+
+  .lattes-inner { max-width: 1400px; margin: 0 auto; }
+
+  .lattes-header { text-align: center; margin-bottom: 52px; }
+  .lattes-subtitle {
+    font-size: 14px;
+    color: var(--text-muted);
+    margin-top: 8px;
+  }
+
+  .lattes-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+  }
+
+  .latte-card {
+    background: #fff;
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    transition: transform 0.3s;
+    cursor: pointer;
+  }
+  .latte-card:hover { transform: translateY(-4px); }
+
+  .latte-img {
+    width: 100%;
+    aspect-ratio: 3/4;
+    object-fit: cover;
+    background: var(--navy);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 52px;
+  }
+
+  .latte-info { padding: 20px; }
+
+  .latte-brand {
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    font-weight: 600;
+    margin-bottom: 4px;
+  }
+
+  .latte-name {
+    font-family: var(--font-serif);
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--navy);
+    margin-bottom: 10px;
+    line-height: 1.2;
+  }
+
+  .latte-desc {
+    font-size: 12.5px;
+    color: var(--text-muted);
+    line-height: 1.55;
+    margin-bottom: 16px;
+  }
+
+  .shop-link {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--navy);
+    border-bottom: 1px solid var(--navy);
+    padding-bottom: 2px;
+    transition: color 0.2s;
+  }
+  .shop-link:hover { color: var(--green); border-color: var(--green); }
+
+  /* ─── JOURNAL ─── */
+  .journal-section {
+    padding: 80px 32px;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  .journal-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+  }
+
+  .journal-card {
+    cursor: pointer;
+    transition: transform 0.3s;
+  }
+  .journal-card:hover { transform: translateY(-4px); }
+
+  .journal-img {
+    width: 100%;
+    aspect-ratio: 4/3;
+    border-radius: 14px;
+    object-fit: cover;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 40px;
+    overflow: hidden;
+  }
+
+  .journal-category {
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--green);
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+
+  .journal-title {
+    font-family: var(--font-serif);
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--navy);
+    line-height: 1.35;
+  }
+
+  /* ─── CLOSING CTA ─── */
+  .closing-cta {
+    background: var(--navy);
+    padding: 100px 32px;
+    text-align: center;
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .closing-cta::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 30% 60%, rgba(74,124,89,0.25) 0%, transparent 60%),
+      radial-gradient(ellipse at 70% 30%, rgba(200,169,110,0.1) 0%, transparent 50%);
+  }
+
+  .closing-cta-inner { position: relative; max-width: 700px; margin: 0 auto; }
+
+  .closing-cta h2 {
+    font-family: var(--font-serif);
+    font-size: clamp(38px, 5vw, 68px);
+    font-weight: 400;
+    line-height: 1.15;
+    margin-bottom: 28px;
+  }
+  .closing-cta h2 em { font-style: italic; color: var(--gold); }
+
+  .closing-cta p {
+    font-size: 16px;
+    color: rgba(255,255,255,0.7);
+    line-height: 1.7;
+    margin-bottom: 40px;
+  }
+
+  /* ─── NEWSLETTER ─── */
+  .newsletter-section {
+    background: var(--cream);
+    padding: 72px 32px;
+    text-align: center;
+  }
+
+  .newsletter-inner { max-width: 520px; margin: 0 auto; }
+
+  .newsletter-label {
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    font-weight: 600;
+    margin-bottom: 12px;
+  }
+
+  .newsletter-inner h3 {
+    font-family: var(--font-serif);
+    font-size: 28px;
+    font-weight: 400;
+    color: var(--navy);
+    margin-bottom: 10px;
+  }
+
+  .newsletter-inner p {
+    font-size: 14px;
+    color: var(--text-muted);
+    margin-bottom: 28px;
+    line-height: 1.6;
+  }
+
+  .newsletter-form {
+    display: flex;
+    gap: 10px;
+    max-width: 420px;
+    margin: 0 auto;
+  }
+
+  .newsletter-form input {
+    flex: 1;
+    border: 1.5px solid var(--border);
+    border-radius: 100px;
+    padding: 14px 22px;
+    font-size: 14px;
+    font-family: var(--font-body);
+    outline: none;
+    background: #fff;
+    transition: border-color 0.2s;
+  }
+  .newsletter-form input:focus { border-color: var(--navy); }
+  .newsletter-form input::placeholder { color: var(--text-muted); }
+
+  .newsletter-form button {
+    background: var(--navy);
+    color: #fff;
+    border: none;
+    border-radius: 100px;
+    padding: 14px 28px;
+    font-size: 13px;
+    font-weight: 600;
+    font-family: var(--font-body);
+    cursor: pointer;
+    white-space: nowrap;
+    transition: background 0.2s;
+    letter-spacing: 0.04em;
+  }
+  .newsletter-form button:hover { background: var(--green); }
+
+  /* ─── FOOTER ─── */
+  footer {
+    background: var(--dark);
+    color: rgba(255,255,255,0.7);
+    padding: 64px 32px 32px;
+  }
+
+  .footer-inner {
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  .footer-top {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 48px;
+    margin-bottom: 56px;
+  }
+
+  .footer-brand .logo-text {
+    color: #fff;
+    font-size: 18px;
+    margin-bottom: 16px;
+    display: block;
+  }
+
+  .footer-brand p {
+    font-size: 13.5px;
+    line-height: 1.7;
+    color: rgba(255,255,255,0.55);
+    margin-bottom: 24px;
+    max-width: 300px;
+  }
+
+  .social-links {
+    display: flex;
+    gap: 14px;
+  }
+
+  .social-link {
+    width: 36px;
+    height: 36px;
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    transition: all 0.2s;
+    color: rgba(255,255,255,0.7);
+  }
+  .social-link:hover {
+    border-color: #fff;
+    color: #fff;
+    background: rgba(255,255,255,0.1);
+  }
+
+  .footer-col h4 {
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #fff;
+    font-weight: 600;
+    margin-bottom: 18px;
+  }
+
+  .footer-col a {
+    display: block;
+    font-size: 13.5px;
+    color: rgba(255,255,255,0.55);
+    padding: 4px 0;
+    transition: color 0.2s;
+  }
+  .footer-col a:hover { color: rgba(255,255,255,0.9); }
+
+  .footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding-top: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 12.5px;
+    color: rgba(255,255,255,0.35);
+  }
+
+  /* ─── RESPONSIVE ─── */
+  @media (max-width: 1100px) {
+    .reviews-grid { grid-template-columns: repeat(3, 1fr); }
+    .lattes-grid { grid-template-columns: repeat(3, 1fr); }
+    .journal-grid { grid-template-columns: repeat(2, 1fr); }
+    .footer-top { grid-template-columns: 1fr 1fr; gap: 32px; }
+  }
+
+  @media (max-width: 768px) {
+    .header-inner { grid-template-columns: auto 1fr auto; padding: 0 20px; }
+    .nav-left { display: none; }
+    .origin-section { grid-template-columns: 1fr; }
+    .origin-image-placeholder { min-height: 300px; }
+    .reviews-grid { grid-template-columns: repeat(2, 1fr); }
+    .lattes-grid { grid-template-columns: repeat(2, 1fr); }
+    .product-grid { grid-template-columns: repeat(2, 1fr); }
+    .footer-top { grid-template-columns: 1fr; }
+    .newsletter-form { flex-direction: column; }
+    .journal-grid { grid-template-columns: 1fr; }
+  }
+
+  /* Colored bg placeholders for products */
+  .bg-sage { background: linear-gradient(135deg, #a8c5a0, #7aaa8a); }
+  .bg-navy { background: linear-gradient(135deg, #2a2857, #3d3b8e); }
+  .bg-gold { background: linear-gradient(135deg, #c8a96e, #e8c87a); }
+  .bg-rust { background: linear-gradient(135deg, #c4603a, #e07a50); }
+  .bg-purple { background: linear-gradient(135deg, #6b5b95, #9b8ec4); }
+  .bg-teal { background: linear-gradient(135deg, #2a8a7a, #4aaa9a); }
+  .bg-pink { background: linear-gradient(135deg, #c47a8a, #e4a0b0); }
+  .bg-brown { background: linear-gradient(135deg, #7a4a2a, #a06840); }
+  .bg-green-dark { background: linear-gradient(135deg, #1e4a2a, #2a6a3a); }
+</style>
+</head>
+<body>
+
+<!-- ANNOUNCEMENT BAR -->
+<div class="announcement-bar">
+  Free US shipping for orders over $75 &nbsp;·&nbsp; Compostable packaging where we can
+</div>
+
+<!-- HEADER -->
+<header>
+  <div class="header-inner">
+    <nav class="nav-left">
+      <div class="nav-item">
+        <a href="#">Shop ▾</a>
+        <div class="mega-menu">
+          <div class="mega-col">
+            <h4>Tea Varieties</h4>
+            <a href="#">Whole Leaf Tea Sachets</a>
+            <a href="#">Pure Matcha</a>
+            <a href="#">Tea Lattes</a>
+            <a href="#">Iced Tea</a>
+          </div>
+          <div class="mega-col">
+            <h4>Collections</h4>
+            <a href="#">Matcha</a>
+            <a href="#">Chai</a>
+            <a href="#">Organic Tea</a>
+            <a href="#">Naked Tea Sachets</a>
+            <a href="#">Black Tea</a>
+            <a href="#">Green Tea</a>
+            <a href="#">Herbal Tea</a>
+            <a href="#">Gifts & Samplers</a>
+          </div>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a href="#">Learn ▾</a>
+        <div class="mega-menu" style="width:380px; grid-template-columns:1fr;">
+          <div class="mega-col">
+            <a href="#">Our Story</a>
+            <a href="#">Our Spirit</a>
+            <a href="#">Tea Journal</a>
+            <a href="#">Café & Wholesale Partners</a>
+            <a href="#">FAQ</a>
+          </div>
+        </div>
+      </div>
+      <a href="#">Reviews</a>
+    </nav>
+
+    <div class="logo">
+      <div class="logo-text">Two Leaves<br>and a Bud</div>
+    </div>
+
+    <div class="nav-right">
+      <a href="#">My Account</a>
+      <a href="#">Café & Wholesale</a>
+      <a href="#">Tea Journal</a>
+      <a href="#" class="cart-btn">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+        Cart (0)
+      </a>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-leaves">
+    <div class="hero-leaf" style="top:8%; left:5%; transform:rotate(-20deg); opacity:0.15;">
+      <svg width="180" height="220" viewBox="0 0 100 130"><ellipse cx="50" cy="65" rx="38" ry="58" transform="rotate(-10,50,65)"/></svg>
+    </div>
+    <div class="hero-leaf" style="bottom:12%; right:6%; transform:rotate(30deg); opacity:0.12;">
+      <svg width="140" height="180" viewBox="0 0 100 130"><ellipse cx="50" cy="65" rx="38" ry="58" transform="rotate(10,50,65)"/></svg>
+    </div>
+    <div class="hero-leaf" style="top:40%; left:2%; transform:rotate(15deg); opacity:0.08;">
+      <svg width="100" height="130" viewBox="0 0 100 130"><ellipse cx="50" cy="65" rx="38" ry="58"/></svg>
+    </div>
+    <div class="hero-leaf" style="top:20%; right:12%; transform:rotate(-35deg); opacity:0.1;">
+      <svg width="120" height="150" viewBox="0 0 100 130"><ellipse cx="50" cy="65" rx="38" ry="58"/></svg>
+    </div>
+  </div>
+
+  <div class="hero-content">
+    <p class="hero-eyebrow">Independent Tea Company · Founded 2004 · Colorado</p>
+    <h1 class="hero-title">A cup that fits<br>the <em>moment.</em></h1>
+    <p class="hero-sub">From compostable whole leaf tea sachets and iced tea to tea lattes and matcha, we've got something for everyone.</p>
+    <a href="#" class="hero-cta">
+      Shop Now
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+  </div>
+
+  <div class="hero-scroll">
+    <div class="scroll-line"></div>
+    <span>scroll</span>
+  </div>
+</section>
+
+<!-- TAGLINE -->
+<div class="tagline-section">
+  <h2>A <em>great</em> cup starts with a careful pluck —<br>the top two leaves and a bud.</h2>
+</div>
+
+<!-- BEST SELLERS -->
+<section class="section">
+  <div class="section-header">
+    <div>
+      <p class="section-label">Best Sellers</p>
+      <h2 class="section-title">Our most-loved teas</h2>
+    </div>
+    <a href="#" class="view-all">Explore All Teas →</a>
+  </div>
+
+  <div class="product-grid">
+    <!-- Product 1 -->
+    <div class="product-card">
+      <div class="product-img-placeholder bg-sage">🍵</div>
+      <div class="product-info">
+        <p class="product-category">Tea Sachets</p>
+        <h3 class="product-name">Organic Tropical Green Tea</h3>
+        <p class="product-desc">A fruity and fun take on a classic green tea.</p>
+        <div class="product-bottom">
+          <div>
+            <div class="product-stars">★★★★★ <span class="product-rating-count">(84)</span></div>
+            <div class="product-price">From $11.95</div>
+          </div>
+          <button class="add-btn">+ Add</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Product 2 -->
+    <div class="product-card">
+      <div class="product-img-placeholder bg-gold">🧺</div>
+      <div class="product-info">
+        <p class="product-category">Gifts & Samplers</p>
+        <h3 class="product-name">Herbal Tea Trio</h3>
+        <p class="product-desc">A trio of soothing herbal teas.</p>
+        <div class="product-bottom">
+          <div>
+            <div class="product-stars">★★★★★ <span class="product-rating-count">(2)</span></div>
+            <div class="product-price">$33.30</div>
+          </div>
+          <button class="add-btn">+ Add</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Product 3 -->
+    <div class="product-card">
+      <div class="product-img-placeholder bg-teal">🌿</div>
+      <div class="product-info">
+        <p class="product-category">Naked Sachets</p>
+        <h3 class="product-name">Organic Peppermint — 50ct</h3>
+        <p class="product-desc">Made from peppermint grown in Washington State.</p>
+        <div class="product-bottom">
+          <div>
+            <div class="product-stars">★★★★★ <span class="product-rating-count">(11)</span></div>
+            <div class="product-price">$21.95</div>
+          </div>
+          <button class="add-btn">+ Add</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Product 4 -->
+    <div class="product-card">
+      <div class="product-img-placeholder bg-brown">🎋</div>
+      <div class="product-info">
+        <p class="product-category">Gifts & Samplers</p>
+        <h3 class="product-name">Classic Bamboo Tea Chest</h3>
+        <p class="product-desc">A 6-slot bamboo box with eight sachets each of six best sellers.</p>
+        <div class="product-bottom">
+          <div>
+            <div class="product-stars">★★★★★ <span class="product-rating-count">(41)</span></div>
+            <div class="product-price">$42.95</div>
+          </div>
+          <button class="add-btn">+ Add</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Product 5 -->
+    <div class="product-card">
+      <div class="product-img-placeholder bg-green-dark">🍵</div>
+      <div class="product-info">
+        <p class="product-category">Latte Mix</p>
+        <h3 class="product-name">Nice Matcha Tea Latte Mix</h3>
+        <p class="product-desc">Lightly sweetened for making matcha lattes simple.</p>
+        <div class="product-bottom">
+          <div>
+            <div class="product-stars">★★★★☆ <span class="product-rating-count">(22)</span></div>
+            <div class="product-price">From $12.95</div>
+          </div>
+          <button class="add-btn">+ Add</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Product 6 -->
+    <div class="product-card">
+      <div class="product-img-placeholder bg-rust">☕</div>
+      <div class="product-info">
+        <p class="product-category">Latte Mix</p>
+        <h3 class="product-name">Nice Chai Tea Latte Mix</h3>
+        <p class="product-desc">Not too sweet, not too spicy — a powdered latte mix.</p>
+        <div class="product-bottom">
+          <div>
+            <div class="product-stars">★★★★☆ <span class="product-rating-count">(17)</span></div>
+            <div class="product-price">From $12.95</div>
+          </div>
+          <button class="add-btn">+ Add</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Product 7 -->
+    <div class="product-card">
+      <div class="product-img-placeholder bg-purple">⛰️</div>
+      <div class="product-info">
+        <p class="product-category">Tea Sachets</p>
+        <h3 class="product-name">Organic Mountain High Chai</h3>
+        <p class="product-desc">An ode to our Rocky Mountain roots with bold spice.</p>
+        <div class="product-bottom">
+          <div>
+            <div class="product-stars">★★★★★ <span class="product-rating-count">(108)</span></div>
+            <div class="product-price">From $11.95</div>
+          </div>
+          <button class="add-btn">+ Add</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Product 8 -->
+    <div class="product-card">
+      <div class="product-img-placeholder bg-navy">🫖</div>
+      <div class="product-info">
+        <p class="product-category">Naked Sachets</p>
+        <h3 class="product-name">Organic Earl Grey — 50ct</h3>
+        <p class="product-desc">Distinctive bergamot aroma — a classic reimagined.</p>
+        <div class="product-bottom">
+          <div>
+            <div class="product-stars">★★★★½ <span class="product-rating-count">(41)</span></div>
+            <div class="product-price">$21.95</div>
+          </div>
+          <button class="add-btn">+ Add</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DISCOVER / FILTER -->
+<section class="discover-section">
+  <div class="discover-inner">
+    <p class="section-label">Discover</p>
+    <h2 class="section-title">Let's find a cup that fits the <em>moment.</em><br>What are you searching for?</h2>
+
+    <div class="filter-grid">
+      <span class="filter-chip active">A Sweet Treat</span>
+      <span class="filter-chip">Evening Unwind</span>
+      <span class="filter-chip">Focused & Clear</span>
+      <span class="filter-chip">Caffeine!</span>
+      <span class="filter-chip">Caffeine-Free</span>
+      <span class="filter-chip">Ceremony-Worthy</span>
+      <span class="filter-chip">Whole Leaf</span>
+      <span class="filter-chip">Over Ice</span>
+      <span class="filter-chip">Lattes</span>
+      <span class="filter-chip">Black Tea</span>
+      <span class="filter-chip">Green Tea</span>
+      <span class="filter-chip">Herbal Tea</span>
+      <span class="filter-chip">Organic</span>
+      <span class="filter-chip">Barista Favorite</span>
+      <span class="filter-chip">Calm & Cozy</span>
+      <span class="filter-chip">Fruit Forward</span>
+    </div>
+  </div>
+</section>
+
+<!-- ORIGIN -->
+<section class="origin-section">
+  <div class="origin-content">
+    <p class="section-label">Our Origins</p>
+    <h2>born in colorado</h2>
+    <p>Our founder, Richard, started Two Leaves and a Bud in pursuit of a truly great cup. Two decades later, that same care and curiosity guide everything we make.</p>
+
+    <div class="origin-pillars">
+      <div class="pillar">
+        <div class="pillar-icon">✦</div>
+        Quality, Without Pretense
+      </div>
+      <div class="pillar">
+        <div class="pillar-icon">🌱</div>
+        Care for People & Planet
+      </div>
+      <div class="pillar">
+        <div class="pillar-icon">🗺</div>
+        Transparent Sourcing
+      </div>
+    </div>
+
+    <a href="#" class="shop-link">Our Story →</a>
+  </div>
+
+  <div class="origin-image">
+    <div class="origin-image-placeholder">🌲</div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="reviews-section">
+  <div class="reviews-inner">
+    <p class="section-label">Reviews</p>
+    <h2 class="section-title">Loved by tea people <em>everywhere.</em><br>Here's what they're saying.</h2>
+
+    <div class="reviews-grid">
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"The right amount of spice."</p>
+        <div class="review-product">
+          <div class="review-product-img">⛰️</div>
+          <div class="review-product-info">
+            <div class="review-product-name">Organic Mountain High Chai</div>
+            <div class="review-author">— Angelina R.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"Incredibly refreshing over ice. Light, crisp, and instantly cooling — perfect for any time of day."</p>
+        <div class="review-product">
+          <div class="review-product-img">🌿</div>
+          <div class="review-product-info">
+            <div class="review-product-name">Organic Matcha Mint</div>
+            <div class="review-author">— Jacob K.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"Clean energy, rich flavor, and all the good stuff your body loves. Literally liquid GOLD."</p>
+        <div class="review-product">
+          <div class="review-product-img">✨</div>
+          <div class="review-product-info">
+            <div class="review-product-name">Two Roots Golden Latte Mix</div>
+            <div class="review-author">— Harrison G.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"Soo tasty and energizing."</p>
+        <div class="review-product">
+          <div class="review-product-img">🍵</div>
+          <div class="review-product-info">
+            <div class="review-product-name">Organic Tropical Green Tea</div>
+            <div class="review-author">— Gracie M.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"The perfect start to my day."</p>
+        <div class="review-product">
+          <div class="review-product-img">🌸</div>
+          <div class="review-product-info">
+            <div class="review-product-name">Jasmine Petal</div>
+            <div class="review-author">— Jorge F.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHOLESALE -->
+<section class="wholesale-section">
+  <div class="wholesale-inner">
+    <h2>Our Café &<br><em>Wholesale Partners</em></h2>
+    <p>From local cafés to national chains, our teas power thousands of baristas every day.</p>
+    <a href="#" class="btn-outline-white">Learn More →</a>
+  </div>
+</section>
+
+<!-- LATTES -->
+<section class="lattes-section">
+  <div class="lattes-inner">
+    <div class="lattes-header">
+      <p class="section-label">Our Lattes</p>
+      <h2 class="section-title">Barista Blends for Every Mood</h2>
+      <p class="lattes-subtitle">(No training required)</p>
+    </div>
+
+    <div class="lattes-grid">
+      <div class="latte-card">
+        <div class="latte-img bg-rust">☕</div>
+        <div class="latte-info">
+          <p class="latte-brand">Nice</p>
+          <h3 class="latte-name">Chai Latte Mix</h3>
+          <p class="latte-desc">Not too sweet, not too spicy — a powdered latte mix meant for making tea lattes simple.</p>
+          <a href="#" class="shop-link">Shop Now →</a>
+        </div>
+      </div>
+
+      <div class="latte-card">
+        <div class="latte-img bg-green-dark">🍵</div>
+        <div class="latte-info">
+          <p class="latte-brand">Nice</p>
+          <h3 class="latte-name">Matcha Latte Mix</h3>
+          <p class="latte-desc">Finely ground green tea with just enough sweetness to blend into delicious matcha lattes or smoothies.</p>
+          <a href="#" class="shop-link">Shop Now →</a>
+        </div>
+      </div>
+
+      <div class="latte-card">
+        <div class="latte-img bg-gold">✨</div>
+        <div class="latte-info">
+          <p class="latte-brand">Two Roots</p>
+          <h3 class="latte-name">Golden Latte</h3>
+          <p class="latte-desc">Naturally caffeine-free blend of spice and sweetness. Only 6g of sugar per serving.</p>
+          <a href="#" class="shop-link">Shop Now →</a>
+        </div>
+      </div>
+
+      <div class="latte-card">
+        <div class="latte-img bg-purple">☕</div>
+        <div class="latte-info">
+          <p class="latte-brand">Barista</p>
+          <h3 class="latte-name">Chai Latte Mix</h3>
+          <p class="latte-desc">Real spices blend with cane sugar and Indian and African black teas for an indulgent experience.</p>
+          <a href="#" class="shop-link">Shop Now →</a>
+        </div>
+      </div>
+
+      <div class="latte-card">
+        <div class="latte-img bg-sage">🍵</div>
+        <div class="latte-info">
+          <p class="latte-brand">Barista</p>
+          <h3 class="latte-name">Matcha Latte Mix</h3>
+          <p class="latte-desc">Pure Japanese matcha blends with cane sugar for a rich and satisfying sipping experience.</p>
+          <a href="#" class="shop-link">Shop Now →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- JOURNAL -->
+<section class="journal-section">
+  <div class="section-header">
+    <div>
+      <p class="section-label">Journal</p>
+      <h2 class="section-title">A community steeped in <em>curiosity.</em><br>Recipes, culture, and everyday tea wisdom.</h2>
+    </div>
+    <a href="#" class="view-all">Explore The Tea Journal →</a>
+  </div>
+
+  <div class="journal-grid">
+    <div class="journal-card">
+      <div class="journal-img bg-navy" style="border-radius:14px;">🌫️</div>
+      <p class="journal-category">Recipe</p>
+      <h3 class="journal-title">London Fog Earl Grey Latte</h3>
+    </div>
+    <div class="journal-card">
+      <div class="journal-img bg-green-dark" style="border-radius:14px;">🍵</div>
+      <p class="journal-category">Recipe</p>
+      <h3 class="journal-title">Nice Matcha Drinks to Delight!</h3>
+    </div>
+    <div class="journal-card">
+      <div class="journal-img bg-sage" style="border-radius:14px;">🧊</div>
+      <p class="journal-category">Recipe</p>
+      <h3 class="journal-title">"Nice" Iced Matcha Latte</h3>
+    </div>
+    <div class="journal-card">
+      <div class="journal-img bg-gold" style="border-radius:14px;">⚡</div>
+      <p class="journal-category">Recipe</p>
+      <h3 class="journal-title">Matcha Energy Balls</h3>
+    </div>
+    <div class="journal-card">
+      <div class="journal-img bg-teal" style="border-radius:14px;">🌿</div>
+      <p class="journal-category">Tea Education</p>
+      <h3 class="journal-title">5 Reasons to Choose Organic Teas</h3>
+    </div>
+    <div class="journal-card">
+      <div class="journal-img bg-green-dark" style="border-radius:14px;">🎄</div>
+      <p class="journal-category">Recipe</p>
+      <h3 class="journal-title">Grinch Latte</h3>
+    </div>
+    <div class="journal-card">
+      <div class="journal-img bg-rust" style="border-radius:14px;">🥧</div>
+      <p class="journal-category">Recipe</p>
+      <h3 class="journal-title">Pecan Pie Chai</h3>
+    </div>
+    <div class="journal-card">
+      <div class="journal-img bg-gold" style="border-radius:14px;">🍎</div>
+      <p class="journal-category">Recipe</p>
+      <h3 class="journal-title">Spiced Apple Chaider</h3>
+    </div>
+  </div>
+</section>
+
+<!-- CLOSING CTA -->
+<section class="closing-cta">
+  <div class="closing-cta-inner">
+    <h2>Great Tea.<br><em>In Good Company.</em></h2>
+    <p>Discover the people, places, and purpose behind every blend.</p>
+    <a href="#" class="hero-cta">About Us →</a>
+  </div>
+</section>
+
+<!-- NEWSLETTER -->
+<section class="newsletter-section">
+  <div class="newsletter-inner">
+    <p class="newsletter-label">Steep with us</p>
+    <h3>Get news stories, brewing tips,<br>and special offers.</h3>
+    <p>Straight to your inbox — no junk, just great tea.</p>
+    <div class="newsletter-form">
+      <input type="email" placeholder="Your email address">
+      <button type="button">Subscribe</button>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <span class="logo-text">Two Leaves and a Bud</span>
+        <p>An independent tea company founded in 2004 in the mountains of Colorado. Named for what gets plucked with every pinch of a tea plant — the top two leaves and one bud.</p>
+        <div class="social-links">
+          <a href="#" class="social-link" aria-label="Facebook">f</a>
+          <a href="#" class="social-link" aria-label="Instagram">ig</a>
+          <a href="#" class="social-link" aria-label="LinkedIn">in</a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Shop</h4>
+        <a href="#">Whole Leaf Tea Sachets</a>
+        <a href="#">Pure Matcha</a>
+        <a href="#">Tea Lattes</a>
+        <a href="#">Iced Tea</a>
+        <a href="#">Gifts & Samplers</a>
+        <a href="#">Shop All</a>
+      </div>
+
+      <div class="footer-col">
+        <h4>Learn</h4>
+        <a href="#">Our Story</a>
+        <a href="#">Our Spirit</a>
+        <a href="#">Tea Journal</a>
+        <a href="#">Reviews</a>
+        <a href="#">FAQ</a>
+        <a href="#">Rewards</a>
+      </div>
+
+      <div class="footer-col">
+        <h4>Partners</h4>
+        <a href="#">Café & Wholesale</a>
+        <a href="#">Wholesale Login</a>
+        <a href="#">Contact</a>
+        <a href="#">Shipping Policy</a>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>© Two Leaves and a Bud 2026</span>
+      <span>Compostable packaging where we can · Independent since 2004</span>
+    </div>
+  </div>
+</footer>
+
+
+</body>
+</html>
